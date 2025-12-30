@@ -2,7 +2,7 @@
 Because there’s no public documentation detailing the scale’s Bluetooth functionality, I took the initiative to reverse-engineer its UUIDs and data payloads in order to unlock the full capabilities of its Bluetooth features.
 
 Bluetooth UUIDs
-
+```
 UUID Type	Value
 
 Service UUID	FFF0
@@ -10,13 +10,12 @@ Service UUID	FFF0
 Characteristic UUID (notifications/weight data)	FFF1
 
 Command UUID (write commands)	FFF2
-
+```
 
 Command Payloads
 
-All payloads follow the format: [0xFA, command_byte, 0x01, 0x01, XOR_checksum]
-
-The XOR checksum is calculated as: command_byte ^ 0x01 ^ 0x01
+All payloads follow the format: ```[0xFA, command_byte, 0x01, 0x01, XOR_checksum]```
+The XOR checksum is calculated as: ```command_byte ^ 0x01 ^ 0x01```
 
 Command	Payload
 ```
